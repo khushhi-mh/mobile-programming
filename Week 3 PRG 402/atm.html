@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>ATM Machine</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .atm-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: green;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            padding: 10px 18px;
+            margin: 5px;
+            font-size: 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .deposit-btn {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .withdraw-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .balance-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #eyeBtn {
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            padding: 0;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="atm-box">
+
+    <h2>ATM MACHINE</h2>
+
+    <div class="balance-section">
+
+        <h3 id="balanceText">
+            Balance: Rs. *******
+        </h3>
+
+        <button id="eyeBtn" onclick="eye()">
+
+            <i class="fa-solid fa-eye-slash" id="eyeIcon"></i>
+
+        </button>
+
+    </div>
+
+    <div id="amountSection" style="display:none;">
+
+        <input type="number"
+               id="amount"
+               placeholder="Enter amount">
+
+    </div>
+
+    <br>
+
+    <button class="deposit-btn"
+            onclick="showInput('deposit')">
+
+        Deposit
+
+    </button>
+
+    <button class="withdraw-btn"
+            onclick="showInput('withdraw')">
+
+        Withdraw
+
+    </button>
+
+    <p id="message"></p>
+
+</div>
+
+<script src="atmhideshow.js"></script>
+
+</body>
+</html>
