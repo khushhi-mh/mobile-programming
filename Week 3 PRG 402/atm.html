@@ -99,22 +99,15 @@
 
 <body>
 
-<div class="atm-box">
-
-    <h2>ATM MACHINE</h2>
+    <div class="atm-box">
+        <h2>ATM MACHINE</h2>
 
     <div class="balance-section">
-
-        <h3 id="balanceText">
-            Balance: Rs. *******
-        </h3>
+        <h3 id="balanceText">Balance: Rs. *******</h3>
 
         <button id="eyeBtn" onclick="eye()">
-
             <i class="fa-solid fa-eye-slash" id="eyeIcon"></i>
-
         </button>
-
     </div>
 
     <div id="amountSection" style="display:none;">
@@ -127,19 +120,9 @@
 
     <br>
 
-    <button class="deposit-btn"
-            onclick="showInput('deposit')">
+    <button class="deposit-btn" onclick="showInput('deposit')">Deposit</button>
 
-        Deposit
-
-    </button>
-
-    <button class="withdraw-btn"
-            onclick="showInput('withdraw')">
-
-        Withdraw
-
-    </button>
+    <button class="withdraw-btn" onclick="showInput('withdraw')">Withdraw</button>
 
     <p id="message"></p>
 
