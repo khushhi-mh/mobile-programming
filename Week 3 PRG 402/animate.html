@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animation Box</title>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
+  <style>
+    #container{
+      width:350px;
+      height:350px;
+      border:2px solid black;
+      position:absolute;
+    }
+    
+    #box{
+      background:grey;
+      height:100px;
+      width:100px;
+      position:absolute;
+      top:0;
+      left:0;
+    }
+  </style>
+</head>
+
+<body>
+    <button>Start Animation</button>
+
+    <br><br>
+    
+    <div id="container">
+      <div id="box"></div>
+    </div>
+    
+    <script>
+    $(document).ready(function(){
+
+      $("button").click(function(){
+        
+        $("#box").animate({top: '250px'}, 4000, function(){
+          document.getElementById("box").style.background="blue";
+          
+          $("#box").animate({left: '250px'}, 4000, function(){
+            document.getElementById("box").style.background="black";
+            
+            $("#box").animate({top: '0px',left: '250px'}, 4000, function(){
+              document.getElementById("box").style.background="purple";
+              
+              $("#box").animate({left: '0px'}, 4000, function(){
+                document.getElementById("box").style.background="grey";
+              });
+            });
+          });
+        });
+      });
+    });
+    </script>
+</body>
+</html>
