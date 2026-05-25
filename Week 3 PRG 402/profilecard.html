@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile - jQuery Assignment</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+    body{
+        font-family: "Times New Roman", Times, serif;
+        padding:20px;
+        background:#f4f4f4;
+        font-size:14px;
+    }
+    #profile-card{
+        width:420px;
+        border:2px solid #ccc;
+        padding:20px;
+        background:white;
+        position:relative;
+        transition:0.4s;
+        border-radius:10px;
+    }
+    #profile-photo{
+        width:150px;
+        height:150px;
+        object-fit:cover;
+        border:4px solid #ddd;
+        transition:0.4s;
+    }
+    .section-title{
+        font-size:16px;
+        margin-top:15px;
+        margin-bottom:5px;
+        color:inherit;
+        font-weight:bold;
+    }
+    #student-bio{
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    #skills-list{
+        padding:10px 30px;
+        border-radius:8px;
+        color:inherit;
+    }
+    .highlighted{
+        border:5px solid gold !important;
+        background:#fff8dc !important;
+    }
+    .dark-mode{
+        background:#2c3e50 !important;
+        color:white !important;
+        border-color:white;
+    }
+    .rounded{
+        border-radius:50%;
+    }
+    .shadow{
+        box-shadow:0px 0px 20px rgba(0,0,0,0.6);
+    }
+
+    button{
+        margin:5px;
+        padding:10px 15px;
+        border:none;
+        border-radius:6px;
+        background:#3498db;
+        color:white;
+        cursor:pointer;
+        transition:0.3s;
+    }
+    button:hover{
+        background:#2980b9;
+    }
+
+    #nickname-input{
+        padding:8px;
+        width:200px;
+        margin-top:10px;
+    }
+    #output{
+        margin-top:20px;
+        color:#e74c3c;
+        font-weight:bold;
+        font-size:18px;
+    }
+    .button-container{
+        display:flex;
+        flex-wrap:wrap;
+        gap:5px;
+        margin-top:20px;
+    }
+    </style>
+</head>
+<body>
+    <div id="profile-card">
+        <img id="profile-photo" src="kkk.jpg" alt="Student Photo">
+        <h2 id="student-name">Student Profile</h2>
+
+    <div class="section-title">About Me (Bio)</div>
+    <div id="student-bio">
+        <p>Very passionate IT student learning web development and programming.</p></div>
+
+    <div class="section-title">My Skills</div>
+    <ul id="skills-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+    </ul>
+    
+    <input type="text" id="nickname-input" placeholder="Enter nickname">
+    </div>
+
+    <br>
+
+    <div class="button-container">
+        <button id="show-name">Show Name</button>
+        <button id="change-name">Change Name</button>
+        <button id="show-bio">Show Bio</button>
+        <button id="get-input">Get Input</button>
+        <button id="set-input">Set Input</button>
+
+    
+        <button id="highlight-card">Highlight Card</button>
+        <button id="remove-highlight">Remove Highlight</button>
+        <button id="toggle-dark">Toggle Dark Mode</button>
+        <button id="toggle-rounded">Toggle Rounded</button>
+
+        <button id="red-bg">Red Background</button>
+        <button id="reset-bg">Reset Background</button>
+    
+        <button id="hide-photo">Hide Photo</button>
+        <button id="show-photo">Show Photo</button>
+        <button id="toggle-bio">Toggle Bio</button>
+
+        <button id="fade-out">Fade Out Card</button>
+        <button id="fade-in">Fade In Card</button>
+        <button id="fade-half">Fade to 50%</button>
+
+        <button id="slide-up">Slide Up Skills</button>
+        <button id="slide-down">Slide Down Skills</button>
+        <button id="slide-toggle">Slide Toggle Skills</button>
+
+        <button id="animate-card">Animate Card</button>
+    </div>
+    <p id="output"></p>
+
+<script>
+$(document).ready(function(){
+    $("#show-name").click(function(){
+        $("#output").text($("#student-name").text());
+        });
+    $("#change-name").click(function(){
+        $("#student-name").text("Khushi Maharjan");
+    });
+    $("#show-bio").click(function(){
+        $("#output").text($("#student-bio").text());
+    });
+
+    $("#get-input").click(function(){
+        $("#output").text($("#nickname-input").val());
+    });
+    $("#set-input").click(function(){
+        $("#nickname-input").val("jQuery Pro");
+    });
+
+    $("#highlight-card").click(function(){
+        $("#profile-card").addClass("highlighted");
+    });
+    $("#remove-highlight").click(function(){
+        $("#profile-card").removeClass("highlighted");
+    });
+    $("#toggle-dark").click(function(){
+        $("#profile-card").toggleClass("dark-mode");
+    });
+    $("#toggle-rounded").click(function(){
+        $("#profile-photo").toggleClass("rounded");
+    });
+
+    $("#red-bg").click(function(){
+        $("#profile-card").css("background","#e74c3c");
+    });
+    $("#reset-bg").click(function(){
+        $("#profile-card").css("background","white");
+    });
+
+    $("#hide-photo").click(function(){
+        $("#profile-photo").hide("slow");
+    });
+    $("#show-photo").click(function(){
+        $("#profile-photo").show("slow");
+    });
+    $("#toggle-bio").click(function(){
+        $("#student-bio").toggle();
+    });
+
+    $("#fade-out").click(function(){
+        $("#profile-card").fadeOut();
+    });
+    $("#fade-in").click(function(){
+        $("#profile-card").fadeIn();
+    });
+    $("#fade-half").click(function(){
+        $("#profile-card").fadeTo("slow",0.5);
+    });
+
+    $("#slide-up").click(function(){
+        $("#skills-list").slideUp();
+    });
+    $("#slide-down").click(function(){
+        $("#skills-list").slideDown();
+    });
+    $("#slide-toggle").click(function(){
+        $("#skills-list").slideToggle();
+    });
+
+    $("#animate-card").click(function(){
+        $("#profile-card")
+        .animate({marginLeft:"200px"},1000)
+        .animate({marginLeft:"0px"},1000);
+    });
+
+    $("#profile-photo").mouseenter(function(){
+        $("#profile-photo").addClass("shadow");
+    });
+    $("#profile-photo").mouseleave(function(){
+        $("#profile-photo").removeClass("shadow");
+    });
+    $("#nickname-input").keydown(function(event){
+        $("#output").text("Key Pressed: " + event.key);
+    });
+});
+</script>
+</body>
+</html>
