@@ -45,54 +45,38 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>
-        ComplaintHub Dashboard
-      </Text>
+      <Text style={styles.header}>ComplaintHub Dashboard</Text>
 
-      <Text style={styles.subHeader}>
-        Report and track maintenance issues
-      </Text>
+      <Text style={styles.subHeader}>Report and track maintenance issues</Text>
 
-      {/* Statistics */}
       <View style={styles.statsRow}>
         <View style={styles.statBox}>
-          <Text style={styles.statNumber}>
-            {complaints.length}
-          </Text>
+          <Text style={styles.statNumber}>{complaints.length}</Text>
           <Text style={statLabelStyle}>Total</Text>
         </View>
 
         <View style={styles.statBox}>
           <Text style={styles.statNumber}>
-            {complaints.filter(
-              item => item.status === 'Pending'
-            ).length}
+            {complaints.filter(item => item.status === 'Pending').length}
           </Text>
           <Text style={statLabelStyle}>Pending</Text>
         </View>
 
         <View style={styles.statBox}>
           <Text style={styles.statNumber}>
-            {complaints.filter(
-              item => item.status === 'In Progress'
-            ).length}
+            {complaints.filter(item => item.status === 'In Progress').length}
           </Text>
-          <Text style={statLabelStyle}>
-            In Progress
-          </Text>
+          <Text style={statLabelStyle}>In Progress</Text>
         </View>
 
         <View style={styles.statBox}>
           <Text style={styles.statNumber}>
-            {complaints.filter(
-              item => item.status === 'Resolved'
-            ).length}
+            {complaints.filter(item => item.status === 'Resolved').length}
           </Text>
           <Text style={statLabelStyle}>Resolved</Text>
         </View>
       </View>
 
-      {/* Complaint List */}
       <FlatList
         data={complaints}
         keyExtractor={(item) => item.id}
@@ -102,13 +86,9 @@ const App = () => {
               {item.title}
             </Text>
 
-            <Text style={styles.category}>
-              Category: {item.category}
-            </Text>
+            <Text style={styles.category}>Category: {item.category}</Text>
 
-            <Text style={styles.date}>
-              Reported: {item.date}
-            </Text>
+            <Text style={styles.date}>Reported: {item.date}</Text>
 
             <View
               style={[
@@ -128,11 +108,8 @@ const App = () => {
         )}
       />
 
-      {/* Report Complaint Button */}
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>
-          + Report Complaint
-        </Text>
+        <Text style={styles.buttonText}>+ Report Complaint</Text>
       </TouchableOpacity>
     </View>
   );
