@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Gallery</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:Arial, sans-serif;
+    padding:20px;
+    background-color:#f2f2f2;
+}
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    font-family:"Times New Roman", Times, serif;
+    color: red;
+    font-size:40px;
+}
+.gallery{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:15px;
+}
+.gallery img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+@media only screen and (min-width:660px){
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+@media only screen and (min-width:992px){
+    .gallery{
+        grid-template-columns:repeat(4,1fr);
+    }
+}
+</style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div class="gallery">
+        <img src="https://image.tmdb.org/t/p/original/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg" alt="Image 1">
+        <img src="https://m.media-amazon.com/images/S/pv-target-images/ae7671171d70df790536a76d027f83c96aa2be80ade76469ecf4412a925179d2._UR2000,3000_.jpg" alt="Image 2">
+        <img src="https://m.media-amazon.com/images/I/81RTEEw8ouL._AC_UF894,1000_QL80_.jpg" alt="Image 3">
+        <img src="https://play-lh.googleusercontent.com/KMqb9kZFdb72zbx0buVCYxNg3kiXzPF7vt6tNt0WErf4UpYBnN4LAvXRgNYmLkJJWpCnkqyNgjQ2Zr2jdQ" alt="Image 4">
+        <img src="https://images.moviesanywhere.com/12fe6de8e41e2d4ef5ab0407524612a1/ebf521f4-7502-4d3b-88ef-7c05284e891f.jpg" alt="Image 5">
+        <img src="https://m.media-amazon.com/images/S/pv-target-images/6ab1a7387a5971a36a576707f5e8f98611745fb78b6c5f90196fb4b6f839ec91.jpg" alt="Image 6">
+        <img src="https://a.ltrbxd.com/resized/film-poster/9/0/7/8/6/8/907868-swapped-2026-0-230-0-345-crop.jpg?v=c7bb59e165" alt="Image 7">
+        <img src="https://cdn.moviefone.com/image-assets/83533/bRBeSHfGHwkEpImlhxPmOcUsaeg.jpg?d=360x540&q=80" alt="Image 8">
+    </div>
+</body>
+</html>
